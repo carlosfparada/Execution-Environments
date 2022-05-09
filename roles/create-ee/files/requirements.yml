@@ -1,0 +1,15 @@
+---
+collections:
+  - awx.awx
+  - f5networks.f5_modules
+  - cisco.ios
+  - cisco.nxos
+  - cisco.aci
+  - arista.eos
+  - netbox.netbox
+  - junipernetworks.junos
+  - paloaltonetworks.panos
+  - ansible.netcommon
+  - ansible.utils
+  - community.general
+  - fortinet.fortios
