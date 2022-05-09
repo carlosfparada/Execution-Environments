@@ -14,10 +14,10 @@
     src: "{{ item }}"
     dest: "{{ ee_path }}{{ item }}"
   with_items:
-    - ansible.cgf
-    - execution-environment.yml
-    - requirements.yml
-    - requirements.txt
+    - files/ansible.cgf
+    - files/execution-environment.yml
+    - ../files/requirements.yml
+    - ../../files/requirements.txt
     - bindep.txt
 
 - name: Run ansible-builder command
