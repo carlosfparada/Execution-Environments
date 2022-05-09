@@ -10,7 +10,7 @@ ansible_builder_cmd: "ansible-builder build --tag {{ ee_image }} --container-run
 # Registry (quay.io)
 ee_registry: quay.io
 ee_registry_user: rh_ee_cparada
-ee_registry_pass: carlos12
+ee_registry_pass: changeme
 ee_registry_url: "{{ ee_image }}/{{ ee_registry_user }}/{{ ee_image }}"
 ee_registry_cmd: "podman push --creds={{ ee_registry_user }}:{{ ee_registry_pass }} localhost/{{ ee_image }} {{ ee_registry_url }}"
 
