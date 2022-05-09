@@ -5,14 +5,14 @@
 #  changed_when: false
 
 - name: Run ansible-builder command
-  ansible.builtin.command: 
+  ansible.builtin.shell: 
     args:
       #cmd: "{{ ansible_builder_cmd }}"
       cmd: "mkdir {{ ee_image }}1"
       chdir: "{{ ee_path }}"
 
 - name: Push image to image registry
-  ansible.builtin.command: 
+  ansible.builtin.shell: 
     args:
       #cmd: "{{ ee_registry_cmd }}"
       cmd: "mkdir {{ ee_image }}2"
