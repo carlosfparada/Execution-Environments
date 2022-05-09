@@ -9,6 +9,17 @@
     path: "mkdir {{ ee_path }}"
     state: directory
 
+- name: Copy config files to the working directory
+  copy:
+    src: "{{ item }}"
+    dest: "{{ ee_path }}{{ item }}"
+    with_items:
+      - ansible.cgf
+      - execution-environment.yml
+      - requirements.yml
+      - requirements.txt
+      - bindep.txt
+
 - name: Run ansible-builder command
   command:
     #cmd: "{{ ansible_builder_cmd }}"
