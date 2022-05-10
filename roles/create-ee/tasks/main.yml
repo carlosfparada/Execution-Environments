@@ -1,9 +1,5 @@
 ---
 
-#- name: Podman garbage collection on any old containers *will clear out most contianers*
-#  ansible.builtin.shell: sudo podman system prune -a -f
-#  changed_when: false
-
 - name: Creating working directory
   file: 
     path: "{{ ee_path }}"
@@ -34,9 +30,8 @@
 
 - name: Install podman
   dnf:
-    name: podman
+    name: docker
     state: present
-  become: yes
 #   vars:
 #     ansible_python_interpreter: /usr/libexec/platform-python
 
