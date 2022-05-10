@@ -27,11 +27,6 @@
     state: present
   #become: yes
 
-- name: Run ansible-builder command
-  command:
-    cmd: "{{ ansible_builder_cmd }}"
-    #cmd: "mkdir {{ ee_image }}1"
-    chdir: "{{ ee_path }}"
 
 # - name: Install python-dnf
 #   pip:
@@ -45,6 +40,12 @@
   become: yes
 #   vars:
 #     ansible_python_interpreter: /usr/libexec/platform-python
+
+- name: Run ansible-builder command
+  command:
+    cmd: "{{ ansible_builder_cmd }}"
+    #cmd: "mkdir {{ ee_image }}1"
+    chdir: "{{ ee_path }}"
 
 - name: Push image to image registry
   command: 
