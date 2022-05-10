@@ -2,7 +2,7 @@
 
 # Image name
 ee_image: ee-supported-rh-cparada
-ee_path: "/tmp/ansible-builder-auto/"
+ee_path: "/tmp/ansible-builder-auto"
 
 # Image build
 ansible_builder_cmd: "ansible-builder build --tag {{ ee_image }} --container-runtime podman -v3"

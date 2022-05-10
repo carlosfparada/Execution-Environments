@@ -9,38 +9,9 @@
     path: "mkdir {{ ee_path }}"
     state: directory
 
-- name: PWD
-  command:
-    cmd: pwd
-    
-- name: LS
-  command:
-    cmd: ls -la /runner/project/
-
-- name: LS
-  command:
-    cmd: ls -la /runner/project/roles
-
-- name: LS
-  command:
-    cmd: ls -la /runner/project/roles/create-ee
-
-- name: LS
-  command:
-    cmd: ls -la /runner/project/roles/create-ee/files/
-
-- name: LS
-  command:
-    cmd: ls -la /runner/project/roles/create-ee/files/ansible.cfg
-
-- name: role_path
-  debug:
-    var: role_path
-
 - name: Copy config files to the working directory
   copy:
     src: "{{ item }}"
-    #dest: "{{ ee_path }}{{ item }}"
     dest: "/tmp/{{ item }}"
   with_items:
     - ansible.cfg
