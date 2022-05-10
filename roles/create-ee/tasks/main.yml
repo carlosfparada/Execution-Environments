@@ -8,6 +8,7 @@
   file: 
     path: "mkdir {{ ee_path }}"
     state: directory
+    force: true
     mode: '0777'
 
 - name: LS
