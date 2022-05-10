@@ -24,11 +24,12 @@
 - name: Install ansible-builder
   pip:
     name: ansible-builder
+    state: present
   #become: yes
 
-- name: Install podman
-  dnf:
-    name: podman
+- name: Install python3-dnf
+  pip:
+    name: python3-dnf
     state: present
   become: yes
 
