@@ -39,9 +39,16 @@
 - name: Run ansible-builder command
   command:
     cmd: "{{ ansible_builder_cmd }}"
-    #cmd: "mkdir {{ ee_image }}1"
     chdir: "{{ ee_path }}"
   become: yes
+
+- name: Include vault quay.io credentials
+  include_vars:
+    - ../vaults/vault_quay.yml
+
+- name: Debug vault quay.io credentials
+  debug:
+    msg: "{{ ee_registry_cmd }}"
 
 - name: Push image to image registry
   command: 
