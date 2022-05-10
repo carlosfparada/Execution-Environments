@@ -37,14 +37,9 @@
   debug:
     var: role_path
 
-- name: Copy config file to the working directory
-  copy:
-    src: "{{ role_path }}/files/ansible.cfg"
-    dest: "{{ ee_path }}ansible.cfg"
-
 - name: Copy config files to the working directory
   copy:
-    src: "{{ role_path }}/files/{{ item }}"
+    src: "{{ item }}"
     dest: "{{ ee_path }}{{ item }}"
   with_items:
     - ansible.cfg
