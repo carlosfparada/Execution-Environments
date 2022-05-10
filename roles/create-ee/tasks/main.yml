@@ -9,18 +9,6 @@
     path: "{{ ee_path }}"
     state: directory
 
-- name: LS
-  command: 
-    cmd: "whereis ansible-builder"
-
-- name: LS
-  command: 
-    cmd: "ls /root/"
-
-- name: LS
-  command: 
-    cmd: "ls $HOME"
-
 - name: Copy config files to the working directory
   copy:
     src: "{{ item }}"
@@ -43,6 +31,19 @@
 #     name: python3-pip
 #     state: present
 #   become: yes
+
+
+- name: LS
+  command: 
+    cmd: "whereis ansible-builder"
+
+- name: LS
+  command: 
+    cmd: "ls /root/"
+
+- name: LS
+  command: 
+    cmd: "ls $HOME"
 
 - name: Set up ansible-builder
   shell: | 
