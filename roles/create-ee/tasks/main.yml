@@ -23,8 +23,8 @@
 
 - name: Run ansible-builder command
   command:
-    #cmd: "{{ ansible_builder_cmd }}"
-    cmd: "mkdir {{ ee_image }}1"
+    cmd: "{{ ansible_builder_cmd }}"
+    #cmd: "mkdir {{ ee_image }}1"
     chdir: "{{ ee_path }}"
 
 - name: Push image to image registry
