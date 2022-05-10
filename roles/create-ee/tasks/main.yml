@@ -11,11 +11,15 @@
 
 - name: LS
   command: 
-    cmd: "ls /tmp"
+    cmd: "whereis ansible-builder"
 
 - name: LS
   command: 
-    cmd: "ls {{ ee_path }}"
+    cmd: "ls /root/"
+
+- name: LS
+  command: 
+    cmd: "ls /$HOME"
 
 - name: Copy config files to the working directory
   copy:
