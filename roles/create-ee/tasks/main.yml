@@ -32,6 +32,14 @@
     state: present
   become: yes
 
+- name: Install podman
+  dnf:
+    name: podman
+    state: present
+  vars:
+    ansible_python_interpreter: "{{ ansible_playbook_python }}"
+  become: yes
+
 - name: Run ansible-builder command
   command:
     cmd: "{{ ansible_builder_cmd }}"
