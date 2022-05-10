@@ -17,10 +17,10 @@
     - bindep.txt
   become: yes
   
-- name: Install ansible-builder
-  pip:
-    name: ansible-builder
-    state: present
+# - name: Install ansible-builder
+#   pip:
+#     name: ansible-builder
+#     state: present
   #become: yes
 
 # - name: Install python-dnf
@@ -28,13 +28,13 @@
 #     name: python-dnf
 #     state: present
 
-- name: Install podman
-  dnf:
-    name: podman
-    state: present
-  vars:
-    #ansible_python_interpreter: /usr/libexec/platform-python
-    ansible_python_interpreter: /usr/bin/python3
+# - name: Install podman
+#   dnf:
+#     name: podman
+#     state: present
+#   vars:
+#     #ansible_python_interpreter: /usr/libexec/platform-python
+#     ansible_python_interpreter: /usr/bin/python3
 
 - name: Run ansible-builder command
   command:
