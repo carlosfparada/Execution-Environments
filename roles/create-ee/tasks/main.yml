@@ -9,6 +9,14 @@
     path: "mkdir {{ ee_path }}"
     state: directory
 
+- name: PWD
+  command:
+    cmd: pwd
+    
+- name: LS
+  command:
+    cmd: ls -la
+    
 - name: Copy config files to the working directory
   copy:
     src: "{{ item }}"
