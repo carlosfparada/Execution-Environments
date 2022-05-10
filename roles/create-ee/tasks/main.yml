@@ -24,7 +24,10 @@
 - name: LS
   command:
     cmd: ls -la /runner/project/roles/create-ee
-    
+
+- name: Find out where I am locally speaking
+    debug: msg="Role path is supposed to be {{ role_path }} "
+
 - name: Copy config files to the working directory
   copy:
     src: "{{ item }}"
