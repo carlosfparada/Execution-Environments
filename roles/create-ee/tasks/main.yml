@@ -32,11 +32,11 @@
 
 - name: LS
   command: 
-    cmd: "ls -la /usr/bin/python*"
+    cmd: "ls -la /usr/bin/"
 
 - name: CAT
   command: 
-    cmd: "cat/usr/libexec/platform-python"
+    cmd: "cat /usr/libexec/platform-python"
 
 
 - name: Install podman
