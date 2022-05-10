@@ -29,16 +29,21 @@
   debug:
     var: role_path
 
+- name: Copy config file to the working directory
+  copy:
+    src: "{{ role_path }}/files/ansible.cfg"
+    dest: "{{ ee_path }}ansible.cfg"
+
 - name: Copy config files to the working directory
   copy:
-    src: "{{ item }}"
+    src: "{{ role_path }}/files/{{ item }}"
     dest: "{{ ee_path }}{{ item }}"
   with_items:
-    - "{{ role_path }}/files/ansible.cfg"
-    - "{{ role_path }}/files/execution-environment.yml"
-    - "{{ role_path }}/files/requirements.yml"
-    - "{{ role_path }}/files/requirements.txt"
-    - "{{ role_path }}/files/bindep.txt"
+    - ansible.cfg
+    - execution-environment.yml
+    - requirements.yml
+    - requirements.txt
+    - bindep.txt
 
 - name: Run ansible-builder command
   command:
