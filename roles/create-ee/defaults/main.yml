@@ -12,7 +12,8 @@ ee_registry: quay.io
 #ee_registry_user: rh_ee_cparada
 #ee_registry_pass: changeme
 ee_registry_url: "{{ ee_image }}/{{ ee_registry_user }}/{{ ee_image }}"
-ee_registry_cmd: "podman push --creds={{ ee_registry_user }}:{{ ee_registry_pass }} localhost/{{ ee_image }} {{ ee_registry_url }}"
+ee_registry_cmd: "podman push localhost/{{ ee_image }} {{ ee_registry_url }}"
+#ee_registry_cmd: "podman push --creds={{ ee_registry_user }}:{{ ee_registry_pass }} localhost/{{ ee_image }} {{ ee_registry_url }}"
 
 # Controller
 
