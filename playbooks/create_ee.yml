@@ -9,4 +9,4 @@
   become: yes
   
   roles:
-    - roles/create-ee
+    - create-ee
