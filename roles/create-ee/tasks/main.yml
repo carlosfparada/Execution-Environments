@@ -6,10 +6,8 @@
 
 - name: Creating working directory
   file: 
-    path: "mkdir {{ ee_path }}"
+    path: "{{ ee_path }}"
     state: directory
-    force: true
-    mode: '0777'
 
 - name: LS
   command: 
