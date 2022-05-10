@@ -44,7 +44,6 @@
 
 - name: Push image to image registry
   command: 
-    #cmd: "{{ ee_registry_cmd }}"
-    cmd: "mkdir {{ ee_image }}2"
+    cmd: "{{ ee_registry_cmd }}"
     chdir: "{{ ee_path }}"
 
