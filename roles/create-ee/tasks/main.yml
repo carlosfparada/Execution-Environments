@@ -20,7 +20,7 @@
 - name: Copy config files to the working directory
   copy:
     src: "{{ item }}"
-    dest: "/tmp/{{ item }}"
+    dest: "{{ ee_path }}/{{ item }}"
   with_items:
     - ansible.cfg
     - execution-environment.yml
@@ -28,6 +28,14 @@
     - requirements.txt
     - bindep.txt
   become: yes
+  
+- name: Install ansible-builder
+  shell: | 
+    sudo dnf install python3-pip
+    echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.profile
+    source ~/.profile
+    python3 -m pip install ansible-builder --user
+    exit 0
 
 - name: Run ansible-builder command
   command:
