@@ -25,6 +25,14 @@
   command:
     cmd: ls -la /runner/project/roles/create-ee
 
+- name: LS
+  command:
+    cmd: ls -la /runner/project/roles/create-ee/files/
+
+- name: LS
+  command:
+    cmd: ls -la /runner/project/roles/create-ee/files/ansible.cfg
+
 - name: role_path
   debug:
     var: role_path
