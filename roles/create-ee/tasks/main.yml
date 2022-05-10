@@ -45,7 +45,7 @@
 - name: Include vault quay.io credentials
   include_vars: ../vaults/vault_quay.yml
 
-- name: Debug vault quay.io credentials
+- name: Debug vault quay.io cmd
   debug:
     msg: "{{ ee_registry_cmd }}"
 
@@ -53,4 +53,6 @@
   command: 
     cmd: "{{ ee_registry_cmd }}"
     chdir: "{{ ee_path }}"
-  become: yes
+    registry_quay_username: "{{ ee_registry_user }}"
+    registry_quay_password: "{{ ee_registry_pass }}"
+    become: yes
