@@ -31,12 +31,13 @@
   
 - name: Install ansible-builder
   shell: | 
-    sudo dnf install python3-pip
+    dnf install python3-pip
     echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.profile
     source ~/.profile
     python3 -m pip install ansible-builder --user
     exit 0
-
+  become: yes
+  
 - name: Run ansible-builder command
   command:
     cmd: "{{ ansible_builder_cmd }}"
