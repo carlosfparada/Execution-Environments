@@ -19,7 +19,7 @@
 
 - name: LS
   command: 
-    cmd: "ls /$HOME"
+    cmd: "ls $HOME"
 
 - name: Copy config files to the working directory
   copy:
@@ -33,6 +33,11 @@
     - bindep.txt
   become: yes
   
+- name: Install ansible-builder
+  pip:
+    name: ansible-builder
+  become: yes
+
 # - name: Install python3 pip
 #   yum:
 #     name: python3-pip
