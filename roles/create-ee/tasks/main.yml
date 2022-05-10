@@ -38,11 +38,11 @@
 #     name: python-dnf
 #     state: present
 
-# - name: Install podman
-#   dnf:
-#     name: podman
-#     state: present
-#   become: yes
+- name: Install podman
+  dnf:
+    name: podman
+    state: present
+  become: yes
 #   vars:
 #     ansible_python_interpreter: /usr/libexec/platform-python
 
