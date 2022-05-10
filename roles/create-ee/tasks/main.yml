@@ -31,7 +31,6 @@
   pip:
     name: python-dnf
     state: present
-    extra_args: --user
 
 - name: Install podman
   dnf:
