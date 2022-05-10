@@ -16,6 +16,14 @@
 - name: LS
   command:
     cmd: ls -la /runner/project/
+
+- name: LS
+  command:
+    cmd: ls -la /runner/project/roles
+
+- name: LS
+  command:
+    cmd: ls -la /runner/project/roles/create-ee
     
 - name: Copy config files to the working directory
   copy:
