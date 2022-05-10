@@ -10,6 +10,14 @@
     state: directory
     mode: '0777'
 
+- name: LS
+  command: 
+    path: "ls /tmp"
+
+- name: LS
+  command: 
+    path: "ls {{ ee_path }}"
+
 - name: Copy config files to the working directory
   copy:
     src: "{{ item }}"
