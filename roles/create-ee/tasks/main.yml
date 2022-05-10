@@ -32,27 +32,20 @@
 #     state: present
 #   become: yes
 
-
-- name: LS
-  command: 
-    cmd: "whereis ansible-builder"
-
-- name: LS
-  command: 
-    cmd: "ls /root/"
-
-- name: LS
-  command: 
-    cmd: "ls $HOME"
-
-- name: Set up ansible-builder
-  shell: | 
-    echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.profile
-    source ~/.profile
-    python3 -m pip install ansible-builder --user
-    exit 0
+# - name: Set up ansible-builder
+#   shell: | 
+#     echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.profile
+#     source ~/.profile
+#     python3 -m pip install ansible-builder --user
+#     exit 0
 #  become: yes
-  
+
+- name: Install podman
+  yum:
+    name: podman
+    state: present
+  become: yes
+
 - name: Run ansible-builder command
   command:
     cmd: "{{ ansible_builder_cmd }}"
