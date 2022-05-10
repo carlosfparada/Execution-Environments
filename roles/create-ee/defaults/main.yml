@@ -5,7 +5,7 @@ ee_image: ee-supported-rh-cparada
 ee_path: "/tmp/ansible-builder-auto"
 
 # Image build
-ansible_builder_cmd: "ansible-builder build --tag {{ ee_image }} --container-runtime podman -v3"
+ansible_builder_cmd: "$HOME/.local/bin/ansible-builder build --tag {{ ee_image }} --container-runtime podman -v3"
 
 # Registry (quay.io)
 ee_registry: quay.io
