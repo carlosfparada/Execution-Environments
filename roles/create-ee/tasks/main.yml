@@ -32,14 +32,19 @@
 
 - name: LS
   command: 
-    cmd: "ls /usr/bin/python*"
+    cmd: "ls -la /usr/bin/python*"
+
+- name: CAT
+  command: 
+    cmd: "cat/usr/libexec/platform-python"
+
 
 - name: Install podman
   dnf:
     name: podman
     state: present
   vars:
-    ansible_python_interpreter: /usr/bin/python2
+    ansible_python_interpreter: /usr/libexec/platform-python
 
 - name: Run ansible-builder command
   command:
