@@ -40,13 +40,15 @@
 - name: Copy config files to the working directory
   copy:
     src: "{{ item }}"
-    dest: "{{ ee_path }}{{ item }}"
+    #dest: "{{ ee_path }}{{ item }}"
+    dest: "/tmp/{{ item }}"
   with_items:
     - ansible.cfg
     - execution-environment.yml
     - requirements.yml
     - requirements.txt
     - bindep.txt
+  become: yes
 
 - name: Run ansible-builder command
   command:
