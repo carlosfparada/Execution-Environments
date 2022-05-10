@@ -33,7 +33,7 @@
 #     state: present
 
 - name: Install podman
-  yum:
+  dnf:
     name: podman
     state: present
   become: yes
