@@ -41,9 +41,10 @@
     cmd: "{{ ansible_builder_cmd }}"
     #cmd: "mkdir {{ ee_image }}1"
     chdir: "{{ ee_path }}"
+  become: yes
 
 - name: Push image to image registry
   command: 
     cmd: "{{ ee_registry_cmd }}"
     chdir: "{{ ee_path }}"
-
+  become: yes

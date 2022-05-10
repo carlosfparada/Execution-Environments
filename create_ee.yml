@@ -4,7 +4,6 @@
 #end
 - name: Create Execution Environments
   hosts: controller
-  connection: local
   gather_facts: no
   become: yes
   
