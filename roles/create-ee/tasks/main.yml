@@ -27,9 +27,9 @@
     state: present
   #become: yes
 
-- name: Install python3-dnf
+- name: Install python-dnf
   pip:
-    name: python3-dnf
+    name: python-dnf
     state: present
   become: yes
 
