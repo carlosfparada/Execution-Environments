@@ -8,7 +8,7 @@
   file: 
     path: "mkdir {{ ee_path }}"
     state: directory
-    mode: '0755'
+    mode: '0777'
 
 - name: Copy config files to the working directory
   copy:
