@@ -43,8 +43,7 @@
   become: yes
 
 - name: Include vault quay.io credentials
-  include_vars:
-    - ../vaults/vault_quay.yml
+  include_vars: ../vaults/vault_quay.yml
 
 - name: Debug vault quay.io credentials
   debug:
