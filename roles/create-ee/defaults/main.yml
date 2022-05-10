@@ -1,5 +1,8 @@
 ---
 
+ansible_python_interpreter: /usr/bin/python3.6
+#ansible_python_interpreter: /usr/libexec/platform-python
+
 # Image name
 ee_image: ee-supported-rh-cparada
 ee_path: "/tmp/ansible-builder-auto"

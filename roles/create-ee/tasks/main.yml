@@ -36,8 +36,6 @@
   dnf:
     name: podman
     state: present
-  vars:
-    ansible_python_interpreter: "/usr/bin/python3.6"
   become: yes
 
 - name: Run ansible-builder command
