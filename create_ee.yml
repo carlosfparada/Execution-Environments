@@ -1,0 +1,12 @@
+---
+#config system global
+#  set rest-api enable
+#end
+- name: Create Execution Environments
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  become: yes
+  
+  roles:
+    - create-ee
