@@ -28,6 +28,12 @@
 #     name: python-dnf
 #     state: present
 
+
+
+- name: LS
+  command: 
+    cmd: "ls /usr/bin/python*"
+
 - name: Install podman
   dnf:
     name: podman
