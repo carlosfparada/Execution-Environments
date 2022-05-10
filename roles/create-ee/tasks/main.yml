@@ -29,9 +29,14 @@
     - bindep.txt
   become: yes
   
-- name: Install ansible-builder
+- name: Install python3 pip
+  yum:
+    name: python3-pip
+    state: latest
+  become: yes
+
+- name: Set up ansible-builder
   shell: | 
-    dnf install python3-pip
     echo 'export PATH=$HOME/.local/bin:$PATH' >> ~/.profile
     source ~/.profile
     python3 -m pip install ansible-builder --user
