@@ -39,7 +39,7 @@
 
 - name: Push EE to quay.io registry
   containers.podman.podman_image:
-    name: ee-ansible-ssa
+    name: "{{ ee_image }}"
     push: true
     push_args:
       dest: "{{ ee_registry_url }}"
