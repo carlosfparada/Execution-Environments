@@ -24,10 +24,10 @@
   become: yes
 
 - name: Include vault quay.io credentials
-  include_vars: ../vaults/vault_quay.yml
+  include_vars: vaults/vault_quay.yml
 
 - name: Include vault registry.redhat.io credentials
-  include_vars: ../vaults/vault_redhat.yml
+  include_vars: vaults/vault_redhat.yml
 
 # - name: Remove all existing container images
 #   ansible.builtin.command: podman rmi -af
