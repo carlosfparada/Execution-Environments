@@ -26,6 +26,9 @@
 - name: Include vault quay.io credentials
   include_vars: ../vaults/vault_quay.yml
 
+- name: Include vault registry.redhat.io credentials
+  include_vars: ../vaults/vault_redhat.yml
+
 # - name: Remove all existing container images
 #   ansible.builtin.command: podman rmi -af
 #   changed_when: true
@@ -33,8 +36,14 @@
 
 - name: Login into quay.io registry
   containers.podman.podman_login:
-    username: "{{ ee_registry_user }}"
-    password: "{{ ee_registry_pass }}"
+    username: "{{ redhat_registry_user }}"
+    password: "{{ redhat_registry_pass }}"
+    registry: registry.redhat.io
+
+- name: Login into quay.io registry
+  containers.podman.podman_login:
+    username: "{{ quay_registry_user }}"
+    password: "{{ quay_registry_pass }}"
     registry: quay.io
 
 - name: Push EE to quay.io registry
