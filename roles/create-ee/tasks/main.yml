@@ -56,7 +56,7 @@
 
 - name: Remove all existing images
   containers.podman.podman_image:
-    name: "{{item.Annotations.'org.opencontainers.image.base.name'}}"
+    name: "{{item.Annotations['org.opencontainers.image.base.name']}}"
     state: absent
   loop: "{{ _images.images}}"
 
