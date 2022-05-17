@@ -50,9 +50,9 @@
   containers.podman.podman_image_info:
   register: _images
 
-- name: Debug all images
-  debug:
-    var: _images
+#- name: Debug all images
+#  debug:
+#    var: _images
 
 - name: Remove all existing images
   containers.podman.podman_image:
