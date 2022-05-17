@@ -17,22 +17,34 @@
     - bindep.txt
   become: yes
 
-- name: Run ansible-builder command
-  command:
-    cmd: "{{ ansible_builder_cmd }}"
-    chdir: "{{ ee_path }}"
-  become: yes
-
 - name: Include vault quay.io credentials
   include_vars: vaults/vault_quay.yml
 
 - name: Include vault registry.redhat.io credentials
   include_vars: vaults/vault_redhat.yml
 
-- name: Remove all existing container images
-  ansible.builtin.command: podman rmi -af
-  changed_when: true
-  ignore_errors: true
+- name: Login into registry.redhat.io registry
+  containers.podman.podman_login:
+    username: "{{ redhat_registry_user }}"
+    password: "{{ redhat_registry_pass }}"
+    registry: registry.redhat.io
+
+- name: Login into quay.io registry
+  containers.podman.podman_login:
+    username: "{{ quay_registry_user }}"
+    password: "{{ quay_registry_pass }}"
+    registry: quay.io
+
+- name: Run ansible-builder command
+  command:
+    cmd: "{{ ansible_builder_cmd }}"
+    chdir: "{{ ee_path }}"
+  become: yes
+
+#- name: Remove all existing container images
+#  ansible.builtin.command: podman rmi -af
+#  changed_when: true
+#  ignore_errors: true
 
 - name: Gather info for all images
   containers.podman.podman_image_info:
@@ -46,18 +58,6 @@
   containers.podman.podman_image:
     name: NAME
     state: absent
-
-- name: Login into registry.redhat.io registry
-  containers.podman.podman_login:
-    username: "{{ redhat_registry_user }}"
-    password: "{{ redhat_registry_pass }}"
-    registry: registry.redhat.io
-
-- name: Login into quay.io registry
-  containers.podman.podman_login:
-    username: "{{ quay_registry_user }}"
-    password: "{{ quay_registry_pass }}"
-    registry: quay.io
 
 - name: Push EE to quay.io registry
   containers.podman.podman_image:
