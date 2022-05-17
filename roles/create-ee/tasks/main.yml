@@ -56,8 +56,9 @@
 
 - name: Remove all existing images
   containers.podman.podman_image:
-    name: NAME
+    name: "{{item.Annotations.org.opencontainers.image.base.name}}"
     state: absent
+  loop: "{{ _images.images}}"
 
 - name: Push EE to quay.io registry
   containers.podman.podman_image:
