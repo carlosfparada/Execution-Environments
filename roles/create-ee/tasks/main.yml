@@ -34,6 +34,19 @@
   changed_when: true
   ignore_errors: true
 
+- name: Gather info for all images
+  containers.podman.podman_image_info:
+  register: _images
+
+- name: Debug all images
+  debug:
+    var: _images
+
+- name: Remove all existing images
+  containers.podman.podman_image:
+    name: NAME
+    state: absent
+
 - name: Login into registry.redhat.io registry
   containers.podman.podman_login:
     username: "{{ redhat_registry_user }}"
