@@ -14,3 +14,4 @@ collections:
   - community.general
   - fortinet.fortios
   - containers.podman
+  - servicenow.itsm
