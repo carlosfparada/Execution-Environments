@@ -15,3 +15,5 @@ collections:
   - fortinet.fortios
   - containers.podman
   - servicenow.itsm
+  - arubanetworks.aoscx
+
