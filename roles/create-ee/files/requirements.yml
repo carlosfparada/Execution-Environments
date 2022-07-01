@@ -16,4 +16,5 @@ collections:
   - containers.podman
   - servicenow.itsm
   - arubanetworks.aoscx
+  - arubanetworks.aos_switch
 
