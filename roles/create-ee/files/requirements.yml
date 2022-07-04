@@ -5,8 +5,6 @@ collections:
   - cisco.ios
   - cisco.nxos
   - cisco.aci
-  - cisco.dnac
-#  - cisco.meraki
   - arista.eos
   - netbox.netbox
   - junipernetworks.junos
@@ -19,4 +17,6 @@ collections:
   - servicenow.itsm
   - arubanetworks.aoscx
 #  - arubanetworks.aos_switch
+  - cisco.dnac
+#  - cisco.meraki
 
