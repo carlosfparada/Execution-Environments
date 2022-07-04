@@ -5,6 +5,8 @@ collections:
   - cisco.ios
   - cisco.nxos
   - cisco.aci
+  - cisco.dnac
+  - cisco.meraki
   - arista.eos
   - netbox.netbox
   - junipernetworks.junos
