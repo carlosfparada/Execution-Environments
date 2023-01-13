@@ -11,13 +11,13 @@ server_list = aap21-ah-rh-certified, aap21-ah-community, automation_hub
 ignore_certs=yes
 
 [galaxy_server.aap21-ah-rh-certified]
-url=https://172.16.1.35/api/galaxy/content/rh-certified/
-#url=https://172.16.1.35/api/galaxy/content/community/
+url=https://172.16.1.47/api/galaxy/content/rh-certified/
+#url=https://172.16.1.47/api/galaxy/content/community/
 token=<private_automation_hub_token>
 
 [galaxy_server.aap21-ah-community]
-#url=https://172.16.1.35/api/galaxy/content/rh-certified/
-url=https://172.16.1.35/api/galaxy/content/community/
+#url=https://172.16.1.47/api/galaxy/content/rh-certified/
+url=https://172.16.1.47/api/galaxy/content/community/
 token=<private_automation_hub_token>
 
 [galaxy_server.automation_hub]
