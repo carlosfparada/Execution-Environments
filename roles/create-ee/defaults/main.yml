@@ -1,7 +1,7 @@
 ---
 
 # Image name
-ee_image: ee-supported-rh-cparada
+ee_image: ee-supported-rh-cparada-auto
 ee_path: "/tmp/ansible-builder-auto"
 
 # Image build
