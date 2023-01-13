@@ -1,10 +1,10 @@
 ---
 collections:
   - awx.awx
+#  - ansible.controller
   - f5networks.f5_modules
   - cisco.ios
   - cisco.nxos
-  - cisco.aci
   - arista.eos
   - netbox.netbox
   - junipernetworks.junos
@@ -16,7 +16,10 @@ collections:
   - containers.podman
   - servicenow.itsm
   - arubanetworks.aoscx
+#  - cisco.aci
+#  - cisco.dnac
+#  - fortinet.fortimanager
+#  - fortinet.fortianalyzer
+#  - community.fortios
 #  - arubanetworks.aos_switch
-  - cisco.dnac
 #  - cisco.meraki
-
